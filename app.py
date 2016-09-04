@@ -3,10 +3,14 @@ import requests
 import numpy as np
 
 from bokeh.layouts import gridplot
-from bokeh.plotting import figure
+from bokeh.plotting import figure, show, output_file
 from bokeh.embed import components
 import pandas as pd
+import json
+from pandas.io.json import json_normalize
+from pandas import Series
 from pandas import DataFrame
+
 
 def datetime(x):
     return np.array(x, dtype=np.datetime64)
