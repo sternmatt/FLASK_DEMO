@@ -34,8 +34,7 @@ def index():
         df = raw_data.json()
         data = DataFrame(data = df['data'], columns = df['column_names'])
 
-        p1 = figure(tools=TOOLS,
-                     title='Stock Closing Prices',
+        p1 = figure(title='Stock Closing Prices',
                      x_axis_label='date',
                      x_axis_type='datetime')
         p1.grid.grid_line_alpha=0.3
