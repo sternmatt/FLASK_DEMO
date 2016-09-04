@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect
 import requests
 import numpy as np
+import bokeh.sampledata
+bokeh.sampledata.download()
+
 from bokeh.layouts import gridplot
 from bokeh.plotting import figure
 from bokeh.embed import components
