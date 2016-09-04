@@ -6,6 +6,7 @@ from bokeh.layouts import gridplot
 from bokeh.plotting import figure
 from bokeh.embed import components
 import pandas as pd
+from pandas import DataFrame
 
 def datetime(x):
     return np.array(x, dtype=np.datetime64)
@@ -26,6 +27,8 @@ def index():
         session = requests.Session()
         session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
         raw_data = session.get(api_url)
+        df = raw_data.json()
+        data = DataFrame(data = df['data'], columns = df['column_names'])
 
         p1 = figure(tools=TOOLS,
                      title='Stock Closing Prices',
@@ -34,7 +37,7 @@ def index():
         p1.grid.grid_line_alpha=0.3
         p1.xaxis.axis_label = 'Date'
         p1.yaxis.axis_label = 'Price'
-        p1.line(datetime(raw_data['Date']), raw_data['Adj. Close'], color='#A6CEE3', legend=stock)
+        p1.line(datetime(data['Date']), data['Adj. Close'], color='#A6CEE3', legend=stock)
         p1.legend.location = "top_left"
 
         """aapl = np.array(AAPL['adj_close'])
