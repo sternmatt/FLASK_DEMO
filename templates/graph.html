@@ -1,0 +1,26 @@
+<!doctype html>
+<title>Ticker Test</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_lulu.css')}}'>
+    <div class=page>
+        <h1>My Ticker </h1>
+        
+        <div class=metanav>
+            
+            {{stockticker}}
+        </div>
+    </div>
+<!--
+
+
+    <head>
+        <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.1.min.css" type="text/css" />
+        <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.1.min.js"></script>
+        {{ script | safe }}
+    </head>
+    <body>
+        <div class=page>
+            <h1>Header text</h1>
+            {{ div | safe }}
+        </div>
+    </body>
+-->

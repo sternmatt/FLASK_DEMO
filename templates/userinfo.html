@@ -1,0 +1,21 @@
+<!doctype html>
+<title>A Stock Ticker Look-up Project</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_lulu.css')}}'>
+    <div class=page>
+        <h1>A Stock Ticker Look-up Project</h1>
+        <div class=metanav>
+            
+            <h4>
+                Please enter a stock ticker eg. GOOG, AAPL, etc.
+            </h4>
+            
+            <form id='userinfoform_lulu' method='post' action='index_lulu' > <!-- action is the URL you want to move to next-->
+                <p>
+                Ticker symbol: <input type='text' name='stockticker' />
+                <p>
+                <input type='submit' value='Submit' /> <!-- value is the text that will appear on the button. -->
+                </p>
+            </form>
+            
+        </div>
+    </div>
